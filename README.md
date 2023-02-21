@@ -15,10 +15,12 @@ This project show to do the following :
 # The minimal expected project structure
 $ tree
 .
+├── streamlit
+    └── config.toml 
+├── notebooks
+    └── eda4.ipynb    
 ├── README.md
 ├── app.py
-├── <vehicles_us.csv>.csv
-└── notebooks
-    └── EDA.ipynb
-└── .streamlit
-    └── config.toml 
+├── requirements.txt
+├── <vehicles_us>.csv
+
