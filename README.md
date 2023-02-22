@@ -24,7 +24,7 @@ $ tree
 ├── requirements.txt
 ├── <vehicles_us>.csv
 
-##app.py show following with :
+## app.py show following with :
 * hist filter base on model_year and price 
 * scatter filter base on transmission
 * check box to apply 
