@@ -21,7 +21,7 @@ filterred_df = df[df["model"] == selected_category]
 fig = px.scatter(filtered_df, x="model_year", y="price", color="type")
 fig.update_layout(title="price vs Model_year Graph")
 st.plotly_chart(fig)
-st.markdown('<font color=red>Filter scatter base on model_year and price</font>'
+st.markdown('<font color=red>Filter scatter base on model_year and price</font>', unsafe_allow_html=True)
 
 #histogram
 hist = px.histogram(df, x="transmission", nbins=20)
