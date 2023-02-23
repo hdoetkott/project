@@ -27,6 +27,7 @@ st.markdown('<font color=red>Filter scatter base on model_year and price</font>'
 hist = px.histogram(df, x="transmission", nbins=20)
 hist.update_layout(title="transmission Graph")
 st.plotly_chart(hist)
+st.markdown('<font color=red>Filter histogram base on transmission</font>', unsafe_allow_html=True)
 
 #scatter plot with checkbox
 x = "model_year"
@@ -45,3 +46,4 @@ if checkbox:
     color_type = st.selectbox("Select type column", df.columns)
 
 update_scatter_plot(x, y, color_type)
+st.markdown('<font color=red>checkbox scatter plot to active sellection</font>', unsafe_allow_html=True)
