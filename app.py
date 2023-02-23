@@ -14,7 +14,7 @@ st.header("""
 
 #filter
 st.sidebar.header("Filter Data")
-selected_category = st.sidebar.selectbox("Select category". df["model"].unique())
+selected_category = st.sidebar.selectbox("Select category", df["model"].unique())
 
 filterred_df = df[df["model"] == selected_category]
 
