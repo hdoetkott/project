@@ -22,12 +22,15 @@ fig = px.scatter(filtered_df, x="model_year", y="price", color="type")
 fig.update_layout(title="price vs Model_year Graph")
 st.plotly_chart(fig)
 st.markdown('<font color=red>Filter scatter base on model_year and price</font>', unsafe_allow_html=True)
+st.markdown('<font color=red>description with px plotting the scatter, with x model year and y for price and color for differences the type of the car, after build the scatter need to display with plotly chart</font>', unsafe_allow_html=True)
 
 #histogram
 hist = px.histogram(df, x="transmission", nbins=20)
 hist.update_layout(title="transmission Graph")
 st.plotly_chart(hist)
 st.markdown('<font color=red>Filter histogram base on transmission</font>', unsafe_allow_html=True)
+st.markdown('<font color=red>description with px plotting the histogram, with x transmission, after build the histogram need to display with plotly chart</font>', unsafe_allow_html=True)
+
 
 #scatter plot with checkbox
 x = "model_year"
@@ -47,3 +50,4 @@ if checkbox:
 
 update_scatter_plot(x, y, color_type)
 st.markdown('<font color=red>checkbox scatter plot to active sellection</font>', unsafe_allow_html=True)
+st.markdown('<font color=red>description with checkbox, to more easier with drop down to choose to display the graph, after build the scatter need to display with plotly chart</font>', unsafe_allow_html=True)
