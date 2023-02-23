@@ -16,7 +16,7 @@ st.header("""
 st.sidebar.header("Filter Data")
 selected_category = st.sidebar.selectbox("Select category", df["model"].unique())
 
-filterred_df = df[df["model"] == selected_category]
+filtered_df = df[df["model"] == selected_category]
 
 fig = px.scatter(filtered_df, x="model_year", y="price", color="type")
 fig.update_layout(title="price vs Model_year Graph")
