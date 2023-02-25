@@ -37,6 +37,8 @@ st.markdown('<font color=red>description with px plotting the histogram, with x 
 
 st.markdown('<font color=red>checkbox scatter plot to active sellection</font>', unsafe_allow_html=True)
 st.markdown('<font color=red>description with checkbox, to more easier with drop down to choose to display the graph, after build the scatter need to display with plotly chart</font>', unsafe_allow_html=True)
+st.markdown('<font color=red>conclusions creating and managing python virtual environments, developing a web application, and deploying it to a cloud service and make it accessible to the public</font>', unsafe_allow_html=True)
+st.markdown('<font color=red>the target to achieve web app accessible via a browser, and can be visualize more easier with check box the graph</font>', unsafe_allow_html=True)
 
 
 #scatter plot with checkbox
