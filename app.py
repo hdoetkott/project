@@ -5,6 +5,10 @@ import plotly_express as px
 df = pd.read_csv("vehicles_us.csv")
 
 df = df.dropna()
+st.markdown('<font color=red>found missing value</font>', unsafe_allow_html=True)
+
+df1 = df.isnull().sum()
+st.markdown('<font color=red>no missing value found</font>', unsafe_allow_html=True)
 
 #df = df.astype({'model_year': int, 'odometer': int, 'cylinder': int, 'is_4wd': int})
 
@@ -47,7 +51,8 @@ if checkbox:
     y = st.selectbox("Select y axis column", df.columns)
     x = st.selectbox("Select x axis column", df.columns)
     color_type = st.selectbox("Select type column", df.columns)
-
-update_scatter_plot(x, y, color_type)
+      
 st.markdown('<font color=red>checkbox scatter plot to active sellection</font>', unsafe_allow_html=True)
 st.markdown('<font color=red>description with checkbox, to more easier with drop down to choose to display the graph, after build the scatter need to display with plotly chart</font>', unsafe_allow_html=True)
+
+update_scatter_plot(x, y, color_type)
