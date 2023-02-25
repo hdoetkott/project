@@ -35,6 +35,9 @@ st.plotly_chart(hist)
 st.markdown('<font color=red>Filter histogram base on transmission</font>', unsafe_allow_html=True)
 st.markdown('<font color=red>description with px plotting the histogram, with x transmission, after build the histogram need to display with plotly chart</font>', unsafe_allow_html=True)
 
+st.markdown('<font color=red>checkbox scatter plot to active sellection</font>', unsafe_allow_html=True)
+st.markdown('<font color=red>description with checkbox, to more easier with drop down to choose to display the graph, after build the scatter need to display with plotly chart</font>', unsafe_allow_html=True)
+
 
 #scatter plot with checkbox
 x = "model_year"
@@ -52,7 +55,5 @@ if checkbox:
     x = st.selectbox("Select x axis column", df.columns)
     color_type = st.selectbox("Select type column", df.columns)
       
-st.markdown('<font color=red>checkbox scatter plot to active sellection</font>', unsafe_allow_html=True)
-st.markdown('<font color=red>description with checkbox, to more easier with drop down to choose to display the graph, after build the scatter need to display with plotly chart</font>', unsafe_allow_html=True)
 
 update_scatter_plot(x, y, color_type)
