@@ -8,7 +8,7 @@ df = df.dropna()
 st.markdown('<font color=red>found missing value</font>', unsafe_allow_html=True)
 
 df1 = df.isnull().sum()
-st.markdown('<font color=red>no missing value found</font>', unsafe_allow_html=True)
+st.markdown('<font color=red>no missing value found in column model_year, paint_color, cylinders, is_4wd, odometer in the notebook</font>', unsafe_allow_html=True)
 
 #df = df.astype({'model_year': int, 'odometer': int, 'cylinder': int, 'is_4wd': int})
 
