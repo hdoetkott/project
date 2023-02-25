@@ -13,7 +13,7 @@ st.markdown('<font color=red>found missing value</font>', unsafe_allow_html=True
 
 v_nan.isnull().sum()
 v_nan
-st.markdown('<font color=red>no missing value found in column model_year, paint_color, cylinders, is_4wd, odometer in the eda4project (1).ipynb</font>', unsafe_allow_html=True)
+st.markdown('<font color=green>no missing value found in column model_year, paint_color, cylinders, is_4wd, odometer in the eda4project (1).ipynb</font>', unsafe_allow_html=True)
 
 #df = df.astype({'model_year': int, 'odometer': int, 'cylinder': int, 'is_4wd': int})
 
@@ -61,6 +61,6 @@ if checkbox:
 
 update_scatter_plot(x, y, color_type)
 
-st.markdown('<font color=red>conclusions creating and managing python virtual environments, developing a web application, and deploying it to a cloud service and make it accessible to the public</font>', unsafe_allow_html=True)
-st.markdown('<font color=red>the target to achieve web app accessible via a browser, and can be visualize more easier with check box the graph, compare the graph model and transmission</font>', unsafe_allow_html=True)
+st.markdown('<font color=green>conclusions creating and managing python virtual environments, developing a web application, and deploying it to a cloud service and make it accessible to the public</font>', unsafe_allow_html=True)
+st.markdown('<font color=green>the target to achieve web app accessible via a browser, and can be visualize more easier with check box the graph, compare the graph model and transmission</font>', unsafe_allow_html=True)
 
