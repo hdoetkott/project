@@ -11,24 +11,20 @@ st.header("""
 model_year_median = df['model_year'].median()
 df['model_year'].fillna(model_year_median, inplace=True)
 #found missing value at column model_year and fill with median of model year
-df['model_year'] = df['model_year'].astype(int)
-#model_year value convert to interger
+
 cylinder_median = df['cylinders'].median()
 df['cylinders'].fillna(cylinder_median, inplace=True)
 #found missing value at column model_year and fill with median of cylinders
-df['cylinders'] = df['cylinders'].astype(int)
-#cylinders value convert to interger
+
 odometer_median = df.groupby('model_year')['odometer'].median()
 df['odometer'] = df.apply(lambda row: odometer_median[row['model_year']] if pd.isna(row['odometer']) else row['odometer'], axis=1)
 #fill odometer by real number based on the median of each year
-df['odometer'] = df['odometer'].astype(int)
-#convert to interger
+
 df['paint_color'].fillna('no info', inplace=True)
 #fill paint_color with no info
 df['is_4wd'].fillna(0, inplace=True)
 #fill is_4wd by 0
-df['is_4wd'] = df['is_4wd'].astype(int)
-#convert to interger
+
 
 
 #df = df.astype({'model_year': int, 'odometer': int, 'cylinder': int, 'is_4wd': int})
