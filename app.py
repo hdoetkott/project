@@ -57,9 +57,13 @@ st.plotly_chart(fig)
 st.markdown('<font color=red>Filter scatter base on model_year and price</font>', unsafe_allow_html=True)
 st.markdown('<font color=red>description with px plotting the scatter, with x model year and y for price and color for differences the type of the car, after build the scatter need to display with plotly chart</font>', unsafe_allow_html=True)
 
+
+
 #histogram
-hist = px.histogram(df, x="transmission", nbins=20)
-hist.update_layout(title="transmission Graph")
+hist_list =['transmission', 'condition', 'fuel', 'type', 'paint_color']
+hist_choice = st.selectbox('Split for price distribution', hist_list)
+hist = px.histogram(df, x='price', color=hist_choice, nbins=20)
+hist.update_layout(title="<b> Split of price by {}</b>".format(hist_choice))
 st.plotly_chart(hist)
 st.markdown('<font color=red>Filter histogram base on transmission</font>', unsafe_allow_html=True)
 st.markdown('<font color=red>description with px plotting the histogram, with x transmission, after build the histogram need to display with plotly chart</font>', unsafe_allow_html=True)
