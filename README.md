@@ -10,7 +10,7 @@ This project show to do the following :
 * Configure the new Render web service. At Build Command, add pip install streamlit & pip install -r requirements.txt 
 * add Start Command, add: streamlit run app.py
 * Deploy to Render,
-* Verify application is accessible at the following URL: https://sprint-4-nfz4.onrender.com
+* Verify application is accessible at the following URL: https://sprint-eda-project-4.onrender.com
 
 # The minimal expected project structure
 $ tree
