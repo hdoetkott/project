@@ -31,10 +31,10 @@ df['is_4wd'].fillna(0, inplace=True)
 
 show_model = st.checkbox('model')
 if not show_model:
-    df_nan = df_nan[df_nan.model!='model']
-model = df_nan['model'].unique()
+    df = df[df.model!='model']
+model = df['model'].unique()
 make_choice = st.selectbox('model:',model)
-min_year, max_year=int(df_nan['model_year'].min()), int(df_nan['model_year'].max())
+min_year, max_year=int(df['model_year'].min()), int(df['model_year'].max())
 
 year_range = st.slider(
      "Choose years",
