@@ -58,7 +58,7 @@ st.markdown('<font color=red>Filter scatter base on model_year and price</font>'
 st.markdown('<font color=red>description with px plotting the scatter, with x model year and y for price and color for differences the type of the car, after build the scatter need to display with plotly chart</font>', unsafe_allow_html=True)
 
 #histogram
-hist = px.histogram(v_nan, x="transmission", nbins=20)
+hist = px.histogram(df, x="transmission", nbins=20)
 hist.update_layout(title="transmission Graph")
 st.plotly_chart(hist)
 st.markdown('<font color=red>Filter histogram base on transmission</font>', unsafe_allow_html=True)
@@ -74,15 +74,15 @@ y = "price"
 color_type = "type"
 
 def update_scatter_plot(x, y, color_type):
-    scatter = px.scatter(v_nan, x=x, y=y, color=color_type)
+    scatter = px.scatter(df, x=x, y=y, color=color_type)
     scatter.update_layout(title="{} vs {}".format(y.capitalize(), x.capitalize()))
     st.plotly_chart(scatter)
 
 checkbox = st.checkbox("Show data table")
 if checkbox:
-    y = st.selectbox("Select y axis column", v_nan.columns)
-    x = st.selectbox("Select x axis column", v_nan.columns)
-    color_type = st.selectbox("Select type column", v_nan.columns)
+    y = st.selectbox("Select y axis column", df.columns)
+    x = st.selectbox("Select x axis column", df.columns)
+    color_type = st.selectbox("Select type column", df.columns)
       
 
 update_scatter_plot(x, y, color_type)
