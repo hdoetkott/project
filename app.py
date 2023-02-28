@@ -16,9 +16,17 @@ cylinder_median = df['cylinders'].median()
 df['cylinders'].fillna(cylinder_median, inplace=True)
 #found missing value at column model_year and fill with median of cylinders
 
+cylinders_mean = df.groupby('model_year')['cylinders'].mean()
+df['cylinders'] = df.apply(lambda row: cylinders_mean[row['model_year']] if pd.isna(row['cylinders']) else row['cylinders'], axis=1)
+#fill cylinders with mean filling
+
 odometer_median = df.groupby('model_year')['odometer'].median()
 df['odometer'] = df.apply(lambda row: odometer_median[row['model_year']] if pd.isna(row['odometer']) else row['odometer'], axis=1)
 #fill odometer by real number based on the median of each year
+
+odometer_mean = df.groupby('model_year')['odometer'].mean()
+df['odometer'] = df.apply(lambda row: odometer_mean[row['model_year']] if pd.isna(row['odometer']) else row['odometer'], axis=1)
+#fill odometer by real number based on the odometer_mean of each year
 
 df['paint_color'].fillna('no info', inplace=True)
 #fill paint_color with no info
