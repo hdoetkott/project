@@ -8,34 +8,24 @@ st.header("""
    Vehicle US
 """)
 
-model_year_median = df['model_year'].median()
-df['model_year'].fillna(model_year_median, inplace=True)
-#found missing value at column model_year and fill with median of model year
-
-cylinder_median = df['cylinders'].median()
-df['cylinders'].fillna(cylinder_median, inplace=True)
-#found missing value at column model_year and fill with median of cylinders
-
-cylinders_mean = df.groupby('model_year')['cylinders'].mean()
-df['cylinders'] = df.apply(lambda row: cylinders_mean[row['model_year']] if pd.isna(row['cylinders']) else row['cylinders'], axis=1)
-#fill cylinders with mean filling
-
-odometer_median = df.groupby('model_year')['odometer'].median()
-df['odometer'] = df.apply(lambda row: odometer_median[row['model_year']] if pd.isna(row['odometer']) else row['odometer'], axis=1)
-#fill odometer by real number based on the median of each year
+model_year_median = df.groupby('model')['model_year'].median()
+df['model_year'] = df.apply(lambda row: model_year_median[row['model']] if pd.isna(row['model_year']) else row['model_year'], axis=1)
+#fill model_year with median filling
 
 odometer_mean = df.groupby('model_year')['odometer'].mean()
 df['odometer'] = df.apply(lambda row: odometer_mean[row['model_year']] if pd.isna(row['odometer']) else row['odometer'], axis=1)
-#fill odometer by real number based on the odometer_mean of each year
+#fill odometer with mean filling
+
+cylinders_median = df.groupby('model')['cylinders'].median()
+df['cylinders'] = df.apply(lambda row: cylinders_median[row['model']] if pd.isna(row['cylinders']) else row['cylinders'], axis=1)
+#fill cylinders with median filling
+
 
 df['paint_color'].fillna('no info', inplace=True)
 #fill paint_color with no info
 df['is_4wd'].fillna(0, inplace=True)
 #fill is_4wd by 0
 
-
-
-#df = df.astype({'model_year': int, 'odometer': int, 'cylinder': int, 'is_4wd': int})
 
 show_model = st.checkbox('model')
 if not show_model:
