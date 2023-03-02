@@ -55,7 +55,7 @@ fig = px.scatter(filtered_df, x="model_year", y="price", color="type")
 fig.update_layout(title="price vs Model_year Graph")
 st.plotly_chart(fig)
 st.write("""
-    #### <font color=red> Filter scatter base on model_year and price
+    #### Filter scatter base on model_year and price
 """, unsafe_allow_html=True)
 st.markdown('<font color=red>description with px plotting the scatter, with x model year and y for price and color for differences the type of the car, after build the scatter need to display with plotly chart</font>', unsafe_allow_html=True)
 
@@ -70,10 +70,7 @@ st.plotly_chart(hist)
 st.write('Filter histogram base on transmission', unsafe_allow_html=True)
 st.markdown('<font color=red>description with px plotting the histogram, with x transmission, after build the histogram need to display with plotly chart</font>', unsafe_allow_html=True)
 
-st.write("""
-    #### <font color=red> checkbox scatter plot to active sellection
-""", unsafe_allow_html=True)
-st.markdown('<font color=red>description with checkbox, to more easier with drop down to choose to display the graph, after build the scatter need to display with plotly chart</font>', unsafe_allow_html=True)
+
 
 #define age category
 df['age']=2022-df['model_year']
@@ -90,6 +87,8 @@ def age_category(x):
 
 df['age_category']= df['age'].apply(age_category) 
 
+
+
 #scatter plot 
 list_for_scatter=['odometer','days_listed']
 
@@ -102,7 +101,12 @@ fig2.update_layout(title="<b> price vs {}</b>".format(choice_for_scatter))
 st.plotly_chart(fig2)
 
 
+
 #scatter plot with checkbox
+st.write("""
+    #### checkbox scatter plot to active sellection
+""", unsafe_allow_html=True)
+st.markdown('<font color=red>description with checkbox, to more easier with drop down to choose to display the graph, after build the scatter need to display with plotly chart</font>', unsafe_allow_html=True)
 x = "model_year"
 y = "price"
 color_type = "type"
@@ -122,7 +126,7 @@ if checkbox:
 update_scatter_plot(x, y, color_type)
 
 st.write("""
-    #### <font color=red> conclusions creating and managing python virtual environments, developing a web application, and deploying it to a cloud service and make it accessible to the public
+    #### conclusions creating and managing python virtual environments, developing a web application, and deploying it to a cloud service and make it accessible to the public
 """, unsafe_allow_html=True)
 st.markdown('<font color=blue>the target to achieve web app accessible via a browser, and can be visualize more easier with check box the graph, compare the graph model and transmission</font>', unsafe_allow_html=True)
 
