@@ -71,6 +71,32 @@ st.markdown('<font color=red>description with px plotting the histogram, with x 
 st.markdown('<font color=red>checkbox scatter plot to active sellection</font>', unsafe_allow_html=True)
 st.markdown('<font color=red>description with checkbox, to more easier with drop down to choose to display the graph, after build the scatter need to display with plotly chart</font>', unsafe_allow_html=True)
 
+#define age category
+df['age']=2022-df['model_year']
+
+def age_category(x):
+
+    if x<5: return '<5'
+
+    elif x>=5 and x<10: return '5-10'
+
+    elif x>=10 and x<20: return '10-20'
+
+    else: return '>20'
+
+df['age_category']= df['age'].apply(age_category) 
+
+#scatter plot 
+list_for_scatter=['odometer','days_listed']
+
+choice_for_scatter = st.selectbox('Price dependency on ', list_for_scatter)
+
+fig = px.scatter(df, x="price", y=choice_for_scatter, color="age_category", hover_data=['model_year'])
+
+fig.update_layout(title="<b> price vs {}</b>".format(choice_for_scatter))
+
+st.plotly_chart(fig)
+
 
 #scatter plot with checkbox
 x = "model_year"
