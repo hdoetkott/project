@@ -28,6 +28,7 @@ df['paint_color'].fillna('no info', inplace=True)
 df['is_4wd'].fillna(0, inplace=True)
 #fill is_4wd by 0
 
+df = df.astype({'model_year': int, 'odometer': int, 'cylinders': int, 'is_4wd': int})
 
 show_model = st.checkbox('model')
 if not show_model:
@@ -67,7 +68,10 @@ hist_choice = st.selectbox('Split for price distribution', hist_list)
 hist = px.histogram(df, x='price', color=hist_choice, nbins=20)
 hist.update_layout(title="<b> Split of price by {}</b>".format(hist_choice))
 st.plotly_chart(hist)
-st.write('Filter histogram base on transmission', unsafe_allow_html=True)
+
+st.write("""
+    #### Filter histogram base on transmission
+""", unsafe_allow_html=True)
 st.markdown('<font color=red>description with px plotting the histogram, with x transmission, after build the histogram need to display with plotly chart</font>', unsafe_allow_html=True)
 
 
