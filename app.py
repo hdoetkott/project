@@ -54,7 +54,7 @@ filtered_df = df[df["model"] == selected_category]
 fig = px.scatter(filtered_df, x="model_year", y="price", color="type")
 fig.update_layout(title="price vs Model_year Graph")
 st.plotly_chart(fig)
-st.markdown('<font color=red>Filter scatter base on model_year and price</font>', unsafe_allow_html=True)
+st.write('Filter scatter base on model_year and price', unsafe_allow_html=True)
 st.markdown('<font color=red>description with px plotting the scatter, with x model year and y for price and color for differences the type of the car, after build the scatter need to display with plotly chart</font>', unsafe_allow_html=True)
 
 
@@ -65,10 +65,10 @@ hist_choice = st.selectbox('Split for price distribution', hist_list)
 hist = px.histogram(df, x='price', color=hist_choice, nbins=20)
 hist.update_layout(title="<b> Split of price by {}</b>".format(hist_choice))
 st.plotly_chart(hist)
-st.markdown('<font color=red>Filter histogram base on transmission</font>', unsafe_allow_html=True)
+st.write('Filter histogram base on transmission', unsafe_allow_html=True)
 st.markdown('<font color=red>description with px plotting the histogram, with x transmission, after build the histogram need to display with plotly chart</font>', unsafe_allow_html=True)
 
-st.markdown('<font color=red>checkbox scatter plot to active sellection</font>', unsafe_allow_html=True)
+st.write('checkbox scatter plot to active sellection', unsafe_allow_html=True)
 st.markdown('<font color=red>description with checkbox, to more easier with drop down to choose to display the graph, after build the scatter need to display with plotly chart</font>', unsafe_allow_html=True)
 
 #define age category
@@ -117,6 +117,6 @@ if checkbox:
 
 update_scatter_plot(x, y, color_type)
 
-st.markdown('<font color=blue>conclusions creating and managing python virtual environments, developing a web application, and deploying it to a cloud service and make it accessible to the public</font>', unsafe_allow_html=True)
+st.write('<font color=blue>conclusions creating and managing python virtual environments, developing a web application, and deploying it to a cloud service and make it accessible to the public</font>', unsafe_allow_html=True)
 st.markdown('<font color=blue>the target to achieve web app accessible via a browser, and can be visualize more easier with check box the graph, compare the graph model and transmission</font>', unsafe_allow_html=True)
 
