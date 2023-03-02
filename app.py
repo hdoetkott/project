@@ -15,6 +15,8 @@ df['model_year'] = df.apply(lambda row: model_year_median[row['model']] if pd.is
 odometer_mean = df.groupby('model_year')['odometer'].mean()
 df['odometer'] = df.apply(lambda row: odometer_mean[row['model_year']] if pd.isna(row['odometer']) else row['odometer'], axis=1)
 #fill odometer with mean filling
+odometer_mean_fill = df['odometer'].mean()
+df['odometer'].fillna(odometer_mean_fill, inplace=True)
 
 cylinders_median = df.groupby('model')['cylinders'].median()
 df['cylinders'] = df.apply(lambda row: cylinders_median[row['model']] if pd.isna(row['cylinders']) else row['cylinders'], axis=1)
