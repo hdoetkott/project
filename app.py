@@ -95,11 +95,11 @@ list_for_scatter=['odometer','days_listed']
 
 choice_for_scatter = st.selectbox('Price dependency on ', list_for_scatter)
 
-fig = px.scatter(df, x="price", y=choice_for_scatter, color="age_category", hover_data=['model_year'])
+fig2 = px.scatter(df, x="price", y=choice_for_scatter, color="age_category", hover_data=['model_year'])
 
-fig.update_layout(title="<b> price vs {}</b>".format(choice_for_scatter))
+fig2.update_layout(title="<b> price vs {}</b>".format(choice_for_scatter))
 
-st.plotly_chart(fig)
+st.plotly_chart(fig2)
 
 
 #scatter plot with checkbox
